@@ -3,6 +3,12 @@ export default
 function darkMode() {
     const icon = document.querySelector("button.dark__mode")
 
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add("dark__mode")
+
+    }
+
+
     if (icon) {
         const lua = icon.querySelector("ion-icon")
 

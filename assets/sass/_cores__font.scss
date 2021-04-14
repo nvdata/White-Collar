@@ -32,12 +32,13 @@ body.dark__mode {
     --font-claro: #c5c5c5;
     --body-fundo: rgb(32, 32, 32);
     --cinza-claro: rgb(228, 228, 228);
-    --pseudo-color:#4c4c4c;
+    --pseudo-color: #4c4c4c;
     --azul-bebe: rgb(60, 60, 60);
     --preto-claro: #d1d1d1;
     --speaker: #3C64B1;
     --moderator: rgba(60, 92, 112, 0.49);
 }
+
 
 // COLORS
 $cor-base:#{var(--cor-base)};
