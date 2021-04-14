@@ -37,6 +37,10 @@ body.dark__mode {
     --preto-claro: #d1d1d1;
     --speaker: #3C64B1;
     --moderator: rgba(60, 92, 112, 0.49);
+
+    img {
+        filter: brightness(0.9);
+    }
 }
 
 
