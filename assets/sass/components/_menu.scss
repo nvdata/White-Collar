@@ -385,6 +385,7 @@
             position: relative;
             padding-left: 10px;
             font-weight: 600;
+
             &:after {
                 @include pseudo(absolute);
                 background: $preto;
@@ -438,8 +439,6 @@
 
 
 .dropdown__content-mobile {
-
-
     display: flex;
     flex-direction: column;
     gap: 5px;

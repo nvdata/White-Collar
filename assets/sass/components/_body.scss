@@ -26,17 +26,24 @@ body {
         cursor: pointer;
         z-index: 10000;
         color: $preto;
-
-        transition: .3s ease;
+        transition-delay: .3s;
+        transition: .5s ease;
 
         ion-icon {
             font-size: 24px;
 
         }
     }
-    &.dark__mode{
-        button.dark__mode{
+
+    &.dark__mode {
+        button.dark__mode {
             color: white;
+        }
+    }
+
+    &.desceu.ativo__scroll {
+        button.dark__mode {
+            transform: translateY(100px);
         }
     }
 }

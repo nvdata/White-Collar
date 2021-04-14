@@ -1,4 +1,4 @@
-export default
+export
 
 function darkMode() {
     const icon = document.querySelector("button.dark__mode")
@@ -30,4 +30,28 @@ function darkMode() {
 
         }
     }
+}
+export
+
+function escondeIcon() {
+
+    let posicaoScroll = window.onscroll = function (e) {
+        let posicao = this.oldScroll > this.scrollY
+        console.log(posicao);
+        this.oldScroll = this.scrollY;
+        if (posicao) {
+            document.body.classList.add("subiu")
+            document.body.classList.remove("desceu")
+
+            console.log("subiu");
+        } else {
+            document.body.classList.remove("subiu")
+            document.body.classList.add("desceu")
+
+            console.log("desceu");
+
+        }
+
+    }
+
 }

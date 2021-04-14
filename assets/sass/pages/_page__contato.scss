@@ -37,6 +37,13 @@ main {
     }
 
 }
+.ativo__scroll{
+    @include d(m){
+        .menu__mobile{
+            background: $cor-base !important;
+        }
+    }
+}
 
 
 
