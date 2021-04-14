@@ -1,0 +1,55 @@
+@import "../sass/cores__font"; // VARIAVEIS DE CORES E FONT
+@import "../sass/mixins"; //MIXINS
+@import "bootstrap__imports"; //BOOTSTRAP
+
+// UTILITIES ⛏
+@import "../sass/utilities/utilitarios";
+@import "../sass/utilities/responsivo"; //  RESPONSIVO
+@import "../sass/utilities/reset";
+@import "../sass/utilities/animation";
+
+//COMPONENTS GERAIS ♺ 
+@import "../sass/components/footer";
+@import "../sass/components/menu";
+@import "../sass/components/body"; //alterações no BODY
+
+
+//pages ⛬
+.body__home {
+  @import "../sass/pages/page__home";
+}
+
+.body__about {
+  @import "../sass/pages/page__about";
+}
+
+.body__boards {
+  @import "../sass/pages/page__boards";
+}
+
+.body__boards-description {
+  @import "../sass/pages/page__boards-description";
+}
+
+.body__members {
+  @import "../sass/pages/page__members";
+}
+
+.body__events {
+  @import "../sass/pages/page__events";
+}
+
+.body__events-description {
+  @import "../sass/pages/page__events-description";
+}
+
+.body__publications {
+  @import "../sass/pages/page__publications";
+}
+
+.body__publications-single {
+  @import "../sass/pages/page__publications-single";
+}
+.body__contato {
+  @import "../sass/pages/page__contato";
+}

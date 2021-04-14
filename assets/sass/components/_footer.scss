@@ -1,0 +1,116 @@
+.footer {
+    background: $cor-base;
+    padding: 40px 0 25px;
+    color: $white;
+    font-family: $font-montserrat;
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include d(s) {
+            flex-direction: column;
+        }
+
+        .footer__logo {
+
+            >img {
+                max-width: 100%;
+                margin-bottom: 30px;
+
+                @include d(m) {
+                    @include center;
+                }
+            }
+
+            .redes__wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 30px;
+
+                img {
+                    width: 40px;
+                    cursor: pointer;
+                }
+
+                a {
+                    transition: .4s ease;
+                    &:hover{
+                        transform: scale(.9);
+                    }
+                }
+
+                a+a {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                color: $white;
+                margin-bottom: 18px;
+                font-weight: 500;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+            }
+        }
+
+        .contato {
+            display: flex;
+            flex-direction: column;
+
+            @include d(m) {
+                padding: 0;
+                margin-top: 20px;
+            }
+
+            h2 {
+                color: $white;
+                font-size: 18px;
+                margin-bottom: 18px;
+
+            }
+
+            a {
+                color: $white;
+                display: inline-flex;
+                margin-bottom: 15px;
+                font-size: 12px;
+                letter-spacing: .5px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .footer__cop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        p {
+            color: $white;
+
+        }
+
+        a {
+            img {
+                width: 75px;
+                object-fit: contain;
+            }
+        }
+    }
+
+}

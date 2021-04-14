@@ -1,0 +1,231 @@
+@include menu-subpages;
+
+.intro {
+    @include intro-pages
+}
+
+
+.filtro {
+    padding: 15px 0;
+    margin-bottom: 60px;
+
+    @include d(s) {
+        margin-bottom: 30px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .select__container,
+    .input__container {
+        position: relative;
+    }
+
+    select,
+    input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: transparent;
+        -webkit-appearance: none;
+        appearance: none;
+        color: $font-claro;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+
+    select {
+        padding-left: 40px;
+
+    }
+
+    .select__container {
+        width: 250px;
+        height: 50px;
+        padding: 10px;
+        background: $white-mode;
+        border-right: 1px solid $cor-suporte;
+
+        &:after {
+            @include pseudo(absolute);
+            background-image: url(../img/down-select.svg);
+            left: 10px;
+            top: -3px;
+            bottom: 0;
+            margin: auto 0;
+            width: 20px;
+            height: 15px;
+        }
+    }
+
+    .input__container {
+        width: 300px;
+        height: 50px;
+        background: $white-mode;
+        padding-left: 20px;
+
+        @include d(m) {
+            border-radius: 5px 0 0 5px;
+            border: 1px solid $cor-suporte;
+        }
+
+
+    }
+
+    .select__container {
+        @include d(m) {
+            display: none;
+        }
+    }
+
+    .select__border {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .btn__container {
+
+        button,
+        input {
+            height: 50px;
+            text-align: center;
+            width: 120px;
+            background: $cinza-base;
+            border-radius: 0 4px 4px 0;
+            font-weight: 700;
+            font-family: 'Mulish';
+            text-transform: uppercase;
+            color: $white;
+            letter-spacing: .5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $cor-base;
+            }
+        }
+    }
+
+
+}
+
+
+
+//resultados da busca
+.result {
+    >.container {
+        max-width: 900px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .result__item {
+            background: $white-mode;
+            display: block;
+            padding: 15px 30px;
+            box-shadow: -1px 3px 5px rgba(0, 0, 0, 0.02);
+            margin-bottom: 25px;
+            transition: all .4s ease;
+            border: 1px solid #0000000f;
+            border-radius: 3px;
+            position: relative;
+
+            @include d(s) {
+                margin-bottom: 15px;
+            }
+
+            &:after {
+                @include pseudo(absolute);
+                right: 35px;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                background-image: url(../img/right.svg);
+                width: 12px;
+
+                @include d(s) {
+                    width: 9px;
+                }
+            }
+
+            &:hover {
+                box-shadow: -1px 5px 15px rgba(71, 71, 71, 0.2);
+
+
+
+            }
+
+            h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+                font-weight: 700;
+                color: $preto;
+
+                @include d(s) {
+                    font-size: 18px;
+                }
+            }
+
+            .text__content {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    color: $font-claro;
+                    font-family: $font-montserrat;
+
+                    @include d(s) {
+                        font-size: 12px;
+                    }
+
+                    strong {
+                        color: $preto;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+
+    .link__nao-link {
+        width: 35px;
+        display: inline-block;
+        height: 30px;
+        transition: .4s ease;
+        margin-top: 20px;
+
+        &:hover {
+            transform: scale(.9);
+        }
+    }
+
+    .result__pagination {
+        margin: 20px 0 40px;
+        justify-content: center;
+        display: flex;
+
+        * {
+            font-size: 24px;
+            font-weight: 700;
+            color: $font-claro;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        *+* {
+            margin-left: 15px;
+        }
+
+        *.active {
+            border-bottom: 3px solid $font-claro;
+        }
+    }
+
+}

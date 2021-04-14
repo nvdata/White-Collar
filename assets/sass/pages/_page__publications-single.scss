@@ -1,0 +1,193 @@
+@include menu-subpages;
+
+.intro {
+    margin-top: 140px;
+
+    .arrow {
+        cursor: pointer;
+        display: inline-block;
+
+        svg {
+            transition: .4s ease-in-out;
+
+        }
+
+        &:hover {
+            svg {
+                transform: translateX(-10px) scale(.8);
+            }
+        }
+    }
+
+
+    $speaker:#3C64B1;
+
+    h1 {
+        font-family: $font-serif;
+        color: $preto;
+        margin-bottom: 30px;
+        @include clamp("font-size", 26px, 3.3vw, 62px);
+        margin-top: 40px;
+    }
+
+    h2 {
+        font-weight: bold;
+        @include clamp("font-size", 14px, 2vw, 42px);
+        line-height: 145%;
+        color: $preto-claro;
+        padding-bottom: 20px;
+        max-width: 950px;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-bottom: 2px solid $speaker;
+
+        @include d(m) {
+            max-width: 500px;
+        }
+
+    }
+
+    span {
+        display: inline-block;
+        color: $preto;
+        font-weight: 700;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        margin-top: 20px;
+
+        @include d(m) {
+            font-size: 12px;
+        }
+    }
+}
+
+@mixin faixa($speaker:$speaker) {
+    background: $speaker;
+    padding-bottom: 35px;
+    padding-top: 20px;
+
+    h2 {
+        text-align: center;
+        padding-bottom: 25px;
+        @include center;
+        display: block;
+        color: $white;
+        font-weight: 700;
+        letter-spacing: .9px;
+        text-transform: uppercase;
+        @include clamp("font-size", 22px, 2vw, 38px);
+
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        @include d(m) {
+            flex-direction: column;
+        }
+
+        p {
+            color: $white;
+            max-width: 200px;
+            text-align: center;
+            line-height: 145%;
+            font-weight: 300;
+            font-size: 14px;
+        }
+
+        p+p {
+            @include d(m) {
+                margin-top: 22px;
+            }
+        }
+    }
+}
+
+.info {
+    margin-top: 80px;
+    margin-bottom: 60px;
+
+    @include d(m) {
+        margin-top: 60px;
+    }
+
+    .speaker {
+        @include faixa;
+    }
+
+    .moderator {
+        @include faixa($moderator);
+    }
+}
+
+
+.descrip {
+    @include descrip;
+}
+
+.text {
+    margin-top: 30px;
+    margin-bottom: 80px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 900px;
+
+        p {
+            font-size: 18px;
+            color: $font-claro;
+            line-height: 145%;
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-family: $font-montserrat;
+
+            @include d(m) {
+                font-size: 14px;
+                max-width: 550px;
+            }
+        }
+    }
+
+    h1,
+    h2,
+    h3 {
+        padding: 0;
+        margin: 0;
+        color: $preto;
+        font-family: $font-montserrat;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        @include clamp("font-size", 20px, 2.6vw, 42px)
+    }
+
+    h2 {
+        @include clamp("font-size", 18px, 2.4vw, 32px)
+    }
+
+    h3 {
+        @include clamp("font-size", 16px, 2vw, 28px)
+    }
+
+    img {
+        margin: 0 auto 20px;
+        border-radius: 3px;
+        object-fit: cover;
+        max-height: 400px;
+        width: 100%;
+
+        @include d(m) {
+            max-width: 500px;
+            margin-left: 0
+        }
+    }
+}
+
+#progress {
+    @include progress;
+}

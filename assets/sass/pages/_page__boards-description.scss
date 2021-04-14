@@ -1,0 +1,282 @@
+@include menu-subpages;
+
+.intro {
+    @include intro-pages
+}
+
+
+//sobre estilos
+.sobre {
+    background: $branco-claro;
+    padding: 60px 0;
+
+    .sobre__slide {
+        display: flex;
+        justify-content: space-between;
+
+        @include d(m) {
+            flex-direction: column;
+            justify-content: initial;
+        }
+
+        .img__container {
+            width: 35%;
+
+            @include d(m) {
+                height: 320px;
+                width: 290px;
+                margin: 0 auto;
+            }
+
+            .img__wrapper {
+                width: 300px;
+                margin-left: 30px;
+                position: relative;
+                padding-top: 40px;
+
+
+
+                @include d(m) {
+                    height: 320px;
+                    width: 290px;
+                    margin: 0 auto;
+                }
+
+                @include d(ss) {
+                    transform: scale(.9);
+                }
+
+                &:after {
+                    @include pseudo(absolute);
+                    @include size(100%);
+                    height: 92%;
+                    background: $pseudo-color;
+                    top: 20px;
+                    left: -20px;
+                    z-index: -1;
+
+                    @include d(m) {
+                        height: 320px;
+                        width: 290px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.sobre {
+    .img__wrapper {
+        h2 {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            color: $white;
+            bottom: 70px;
+            // @include center;
+            // left: 0;
+            // right: 0;
+            font-family: $font-serif;
+            font-size: 16px;
+            letter-spacing: 3.2px;
+            display: block;
+            width: max-content;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            @include d(s) {
+                font-size: 12px;
+                margin-left: 10px;
+                margin-right: 10px;
+                bottom: 50px;
+                @include text-shadow;
+
+            }
+        }
+
+        img {
+            object-fit: cover;
+
+            @include d(m) {
+                height: 320px;
+                width: 290px;
+                margin: 0 auto;
+            }
+        }
+
+        p {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            color: $white;
+            bottom: 40px;
+            // @include center;
+            // left: 0;
+            // right: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 14px;
+            display: block;
+            width: max-content;
+            font-weight: 300;
+            font-family: $font-mulish;
+
+            @include d(s) {
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 12px;
+                bottom: 20px;
+                @include text-shadow;
+
+            }
+        }
+    }
+
+    .desc__container {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+
+        @include d(m) {
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-family: $font-serif;
+            font-size: 20px;
+            letter-spacing: 3.2px;
+            display: block;
+            width: max-content;
+            color: $preto;
+        }
+
+        h3 {
+            padding: 0;
+            margin: 0;
+            margin: 10px 0;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            color: $preto;
+
+
+        }
+
+        span {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: $font-claro;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 145%;
+            font-weight: 500;
+            color: $preto;
+            @include d(s) {
+                font-size: 14px;
+            }
+        }
+
+        .local {
+            margin-top: auto;
+
+            span {
+                display: inline-block;
+                margin-bottom: 20px;
+
+            }
+
+            a {
+                img {
+                    opacity: .5;
+                    transition: .4s ease;
+
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(.9);
+                    }
+                }
+            }
+
+        }
+
+        .p__container {
+            a {
+                color: $cor-base-mode;
+                margin-top: 5px;
+                font-weight: 500;
+            }
+
+            p {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+
+            p.active {
+                overflow: initial;
+                display: inline-block;
+                -webkit-line-clamp: initial;
+                -webkit-box-orient: initial;
+            }
+        }
+    }
+}
+
+@media (max-width:1200px) and (min-width:1024px) {
+    .sobre .desc__container {
+        margin-left: 70px;
+    }
+}
+
+//swiper conf
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+    opacity: 0.1;
+}
+
+.swiper-slide {
+    opacity: 0 !important;
+}
+
+.swiper-slide-active {
+    opacity: 1 !important;
+}
+
+.swiper-button-next {
+    right: initial;
+    left: 370px;
+
+    @include d(m) {
+        right: 10px;
+        left: initial;
+        top: 30%;
+    }
+}
+
+.swiper-button-prev {
+    left: 0px;
+
+    @include d(m) {
+        left: 10px;
+        top: 30%;
+    }
+}
+
+.swiper-container {
+    padding-left: 20px;
+}

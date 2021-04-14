@@ -1,0 +1,112 @@
+// ██╗   ██╗████████╗██╗██╗     ██╗████████╗ █████╗ ██████╗ ██╗ ██████╗ ███████╗
+// ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██╔══██╗██╔══██╗██║██╔═══██╗██╔════╝
+// ██║   ██║   ██║   ██║██║     ██║   ██║   ███████║██████╔╝██║██║   ██║███████╗
+// ██║   ██║   ██║   ██║██║     ██║   ██║   ██╔══██║██╔══██╗██║██║   ██║╚════██║
+// ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║  ██║██║  ██║██║╚██████╔╝███████║
+//  ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚══════╝
+
+//nao formatar esse documento
+
+// SCROLLBAR colorida
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+
+//PX TO EM
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+//background
+@mixin bg-props-contain {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@mixin bg-props-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+@mixin pseudo($p:initial) {
+  content: "";
+  @include bg-props-contain;
+
+  display: block;
+  position: $p;
+  pointer-events: none;
+
+}
+
+
+@mixin clamp($property, $min-size, $scaler, $max-size, $min-size-left:false, $scaler-left:false, $max-size-left:false){
+    @if $min-size-left == false {
+      #{$property}:$max-size; 
+      #{$property}:#{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"}; 
+      #{$property}:clamp(#{$min-size},#{$scaler}, #{$max-size});
+     
+    } @else if $min-size-left == 0 or $min-size-left == auto{
+      #{$property}:$max-size $min-size-left; 
+      #{$property}:#{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"} $min-size-left;
+      #{$property}:clamp($min-size, $scaler, $max-size) $min-size-left;
+
+    } @else {
+      #{$property}:$max-size $min-size-left; 
+      #{$property}:#{"min(max(#{$min-size}, #{$scaler}), #{$max-size})"} #{"min(max(#{$min-size-left}, #{$scaler-left}), #{$max-size-left})"}; 
+      #{$property}:clamp($min-size, $scaler, $max-size) clamp($min-size-left, $scaler-left, $max-size-left);
+      
+    }
+}
+
+
+// @mixin font-face($font-name, $file-name, $weight: normal, $style: normal) { 
+//   @font-face {
+//     font-family: quote($font-name);
+//     src: url($file-name + '.eot');
+//     src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+//          url($file-name + '.woff') format('woff'),
+//          url($file-name + '.ttf')  format('truetype'),
+//          url($file-name + '.svg##{$font-name}')  format('svg');
+//     font-weight: $weight;
+//     font-style: $style;
+//   }
+// }
+
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+//flexbox 
+@mixin flex ($justificado:space-between, $alinhamento:center, $flow:row wrap) {
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $justificado;
+  align-items: $alinhamento;
+}

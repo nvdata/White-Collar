@@ -1,0 +1,270 @@
+@include menu-subpages;
+
+.intro {
+    @include intro-pages;
+
+    p {
+        max-width: 600px;
+    }
+}
+
+.filtro {
+    padding: 15px 0;
+    margin-bottom: 60px;
+
+    @include d(s) {
+        margin-bottom: 30px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .select__container,
+    .input__container {
+        position: relative;
+    }
+
+    select,
+    input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: transparent;
+        -webkit-appearance: none;
+        appearance: none;
+        color: $font-claro;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+
+
+    .input__container {
+        width: 500px;
+        height: 50px;
+        background: $white-mode;
+        padding-left: 20px;
+        border-radius: 5px 0 0 5px;
+
+        @include d(m) {
+            border-radius: 5px 0 0 5px;
+        }
+
+
+    }
+
+    .select__container {
+        @include d(m) {
+            display: none;
+        }
+    }
+
+    .select__border {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .btn__container {
+
+        button,
+        input {
+            height: 50px;
+            text-align: center;
+            width: 120px;
+            background: $cinza-base;
+            border-radius: 0 4px 4px 0;
+            font-weight: 700;
+            font-family: 'Mulish';
+            text-transform: uppercase;
+            color: $white;
+            letter-spacing: .5px;
+            cursor: pointer;
+            display: inline-flex;
+            flex-direction: row-reverse;
+            align-items: center;
+
+            &:hover {
+                background-color: $cor-base;
+            }
+
+            ion-icon {
+                font-size: 16px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+
+    }
+
+
+}
+
+
+
+.event {
+    padding-bottom: 120px;
+
+    >.container {
+        @include d(s) {
+            padding: 0;
+
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+
+        @include d(m) {
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-family: $font-serif;
+            color: $preto-claro;
+            line-height: 145%;
+            font-size: 26px;
+            margin-bottom: 40px;
+            height: 75px;
+
+            @include d(s) {
+                font-size: 20px;
+                height: initial;
+                padding: 0 15px;
+
+            }
+        }
+    }
+
+    &__col {
+        padding: 20px 40px;
+
+
+
+        @include d(s) {
+            padding: 20px 15px;
+        }
+
+        &:last-child {
+            background: $azul-bebe;
+        }
+    }
+
+    &__item {
+        border: 1px solid $cinza-claro;
+        padding: 10px 15px;
+        margin-top: 25px;
+        border-radius: 3px;
+        transition: border .4s ease-in;
+
+        @include d(m) {
+            max-width: 400px;
+            margin: 25px auto 0;
+        }
+
+        &:hover {
+            border: 1px solid $font-claro;
+
+        }
+
+        >span {
+            font-family: $font-montserrat;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: $font-claro;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        >h2 {
+            font-size: 16px;
+            font-family: $font-montserrat;
+            display: inline-block;
+            padding-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 1.5px solid $cor-base;
+            line-height: 145%;
+            color: $preto;
+
+            @include d(s) {
+                font-size: 14px;
+            }
+
+        }
+
+        >h5.end {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+
+        }
+
+        .date {
+            margin-top: 5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 10px;
+            margin-bottom: 20px;
+
+            @include d(s) {
+                padding: 0;
+            }
+
+            * {
+                display: inline-block;
+                color: $cor-base !important;
+                font-size: 14px;
+                font-weight: 600;
+
+            }
+
+        }
+
+        .desc {
+            font-family: $font-montserrat;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: $font-claro;
+
+            @include d(s) {
+                font-size: 12px;
+            }
+
+            strong {
+                color: $preto;
+
+            }
+
+        }
+
+        p:not(.desc) {
+            color: $font-claro;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: 600
+        }
+
+        .btn {
+            @include botao-collar(transparent, $preto);
+            border: 1px solid $preto;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 8px 18px;
+
+            &:hover {
+                border: 1px solid transparent;
+
+            }
+
+        }
+    }
+}

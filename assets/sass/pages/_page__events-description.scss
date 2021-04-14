@@ -1,0 +1,183 @@
+@include menu-subpages;
+
+.intro {
+    margin-top: 140px;
+
+    .arrow {
+        cursor: pointer;
+        display: inline-block;
+
+        svg {
+            transition: .4s ease-in-out;
+
+        }
+
+        &:hover {
+            svg {
+                transform: translateX(-10px) scale(.8);
+            }
+        }
+    }
+
+    &__date {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+        margin-bottom: 60px;
+
+        @include d(m) {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        * {
+            display: inline-block;
+            color: $cor-base;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: $font-montserrat;
+
+            @include d(m) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    h1 {
+        font-family: $font-serif;
+        color: $preto-claro;
+        margin-bottom: 30px;
+        @include clamp("font-size", 22px, 2vw, 42px);
+    }
+
+    h2 {
+        font-weight: bold;
+        @include clamp("font-size", 18px, 2vw, 42px);
+        line-height: 120%;
+        color: $preto-claro;
+        margin-bottom: 30px;
+        max-width: 950px;
+
+    }
+}
+
+$speaker:#3C64B1;
+$moderator:rgba(60, 92, 112, 0.49);
+
+@mixin faixa($speaker:$speaker) {
+    background: $speaker;
+    padding-bottom: 35px;
+    padding-top: 20px;
+
+    h2 {
+        text-align: center;
+        padding-bottom: 25px;
+        @include center;
+        display: block;
+        color: $white;
+        font-weight: 700;
+        letter-spacing: .9px;
+        text-transform: uppercase;
+        @include clamp("font-size", 22px, 2vw, 38px);
+
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        @include d(m) {
+            flex-direction: column;
+        }
+
+        p {
+            color: $white;
+            max-width: 200px;
+            text-align: center;
+            line-height: 145%;
+            font-weight: 300;
+            font-size: 14px;
+        }
+
+        p+p {
+            @include d(m) {
+                margin-top: 22px;
+            }
+        }
+    }
+}
+
+.info {
+    margin-top: 80px;
+    margin-bottom: 60px;
+
+    @include d(m) {
+        margin-top: 60px;
+    }
+
+    .speaker {
+        @include faixa;
+    }
+
+    .moderator {
+        @include faixa($moderator);
+    }
+}
+
+.descrip {
+    margin-bottom: 120px;
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: 22px;
+            display: inline-block;
+            width: fit-content;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid $speaker;
+            color: $preto;
+
+            @include d(m) {
+                width: 350px;
+                font-size: 18px;
+            }
+
+            @include d(s) {
+                width: 100%;
+            }
+        }
+
+        p {
+            max-width: 840px;
+            display: inline-block;
+            margin-bottom: 30px;
+            color: $font-claro;
+            line-height: 145%;
+            font-size: 18px;
+
+            @include d(m) {
+                font-size: 14px;
+                max-width: 350px
+            }
+
+            @include d(s) {
+                width: 100%;
+            }
+        }
+    }
+
+    a {
+        @include botao-collar(transparent, $preto);
+        border: 1px solid $preto;
+        display: inline-block;
+        font-weight: 500;
+
+        &:hover {
+            border: 1px solid transparent;
+        }
+    }
+}

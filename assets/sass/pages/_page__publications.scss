@@ -1,0 +1,161 @@
+@include menu-subpages;
+
+.intro {
+    margin-bottom: 120px;
+    @include intro-pages;
+}
+
+
+
+
+
+.descrip {
+    @include descrip;
+
+    &__text {
+        h2 {
+            font-weight: bold;
+            @include clamp("font-size", 16px, 2vw, 28px);
+            line-height: 120%;
+            color: $preto-claro;
+            margin-bottom: 30px;
+            max-width: 750px;
+        }
+
+        span {
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 20px;
+            margin-top: -20px;
+            font-family: $font-montserrat;
+            color: $preto;
+        }
+
+    }
+
+    a {
+        margin-top: 0px;
+    }
+
+    &__item {
+        margin-top: 55px;
+    }
+}
+
+.post {
+    margin-bottom: 180px;
+
+    @include d(m) {
+        margin-bottom: 100px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include d(m) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__text {
+        @include d(m) {
+            margin-top: 20px;
+        }
+
+        span {
+            font-family: $font-serif;
+            font-size: 14px;
+            letter-spacing: .6px;
+            color: $cinza-base;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        h2 {
+            font-family: $font-serif;
+            font-size: 22px;
+            letter-spacing: .6px;
+            line-height: 145%;
+            max-width: 550px;
+            color: $preto-claro;
+            margin-bottom: 15px;
+
+            @include d(m) {
+                font-size: 16px;
+                letter-spacing: .4px;
+            }
+
+        }
+
+        p {
+            line-height: 140%;
+            color: $preto-claro;
+            font-family: $font-montserrat;
+
+            @include d(s) {
+                font-size: 14px;
+            }
+        }
+
+        a {
+            @include botao-collar(transparent, $preto);
+            border: 1px solid $preto;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+
+            &:hover {
+                border: 1px solid transparent;
+            }
+        }
+    }
+
+    &__img {
+        position: relative;
+        width: 420px;
+        height: 370px;
+
+        @include d(m) {
+            width: 280px;
+            height: 280px;
+            margin-left: -40px;
+        }
+
+        &:after {
+            @include pseudo(absolute);
+            @include size (100%);
+            max-width: 420px;
+
+            margin: auto;
+            background-color: $cor-suporte;
+            bottom: -30px;
+            right: 55px;
+            z-index: -1;
+
+            @include d(m) {
+                width: 280px;
+                height: 250px;
+                right: initial;
+                bottom: 0px;
+                right: -30px;
+            }
+        }
+
+        img {
+            margin: 0 auto;
+            max-width: 420px;
+            @include inset;
+            margin: auto;
+            object-fit: contain;
+
+            @include d(m) {
+                width: 280px;
+                height: 280px;
+            }
+
+
+        }
+    }
+}

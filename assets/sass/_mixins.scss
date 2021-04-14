@@ -1,0 +1,390 @@
+@import "../sass/utilities/clamp";
+
+@mixin hover__efect($bg:$cor-base, $white:$white) {
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 41px;
+        background: $bg;
+        @include inset;
+        transform: translatey(200%);
+        transition: all .5s ease;
+        z-index: -1;
+        pointer-events: none;
+        border-radius: 2px;
+    }
+
+    &:hover {
+        text-decoration-color: transparent !important;
+        color: $white;
+
+        &:after {
+            transform: translatey(0)
+        }
+    }
+
+
+}
+
+@mixin botao-collar($preto:$preto, $white:$white) {
+    display: inline-flex;
+    padding: 10px 20px;
+    background: $preto;
+    color: $white;
+    margin: 15px 0px 10px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: .4s ease;
+    @include hover__efect;
+    z-index: 2;
+
+    &:hover {
+        background: transparent;
+    }
+
+    @include d(s) {
+        font-size: 14px;
+    }
+}
+
+
+@mixin descrip {
+    margin-bottom: 120px;
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: 22px;
+            display: inline-block;
+            width: fit-content;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid $speaker;
+
+            @include d(m) {
+                width: 350px;
+                font-size: 18px;
+            }
+
+            @include d(s) {
+                width: 100%;
+            }
+        }
+
+        p {
+            max-width: 840px;
+            display: inline-block;
+            margin-bottom: 30px;
+            color: $font-claro;
+            line-height: 145%;
+            font-size: 18px;
+
+            @include d(m) {
+                font-size: 14px;
+                max-width: 350px
+            }
+
+            @include d(s) {
+                width: 100%;
+            }
+        }
+    }
+
+    a {
+        @include botao-collar(transparent, $preto);
+        border: 1px solid $preto;
+        display: inline-block;
+        font-weight: 500;
+
+        &:hover {
+            border: 1px solid transparent;
+        }
+    }
+}
+
+@mixin progress {
+    --scroll: 0%;
+    background: linear-gradient(to right, $cor-base var(--scroll), transparent 0);
+    position: fixed;
+    width: 100%;
+    height: 5px;
+    top: 55px;
+    z-index: 100;
+}
+
+@mixin intro-pages {
+    margin-top: 200px;
+    margin-bottom: 160px;
+
+    @include d(m) {
+        margin-top: 160px;
+        margin-bottom: 100px;
+
+    }
+
+    @include d(s) {
+        margin-bottom: 70px;
+    }
+
+    &__text {
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+
+        h1 {
+            @include titulo-center;
+        }
+
+        p {
+            @include subtitulo-center;
+        }
+
+        p+p {
+            margin-top: 30px;
+        }
+
+    }
+}
+
+@mixin subtitulo-center {
+    text-align: center;
+    max-width: 750px;
+    display: block;
+    @include center;
+    line-height: 150%;
+    font-weight: 500;
+    @include clamp("font-size", 16px, 1.2vw, 18px);
+    color: $preto;
+
+
+    @include d(m) {
+        font-size: 14px;
+        max-width: 450px;
+    }
+}
+
+@mixin menu-subpages {
+    .menu {
+        background: $cor-base !important;
+    }
+
+    .menu__desktop {
+        padding: 20px 0;
+
+        .menu__logo {
+            img {
+                max-width: 350px;
+
+            }
+        }
+
+        .menu__btn {
+            margin: 0 20px;
+            @include hover__efect($preto);
+
+            &:hover {
+                background: transparent;
+            }
+
+        }
+
+    }
+
+    .menu__mobile {
+        padding: 10px 0 !important;
+
+        .menu__logo {
+            img {
+                max-width: 280px;
+
+                @include d(ss) {
+                    max-width: 220px;
+                }
+            }
+
+
+        }
+    }
+
+
+
+    @media (max-width:1200px) {
+        .menu__desktop {
+            .menu__logo {
+                img {
+                    max-width: 220px;
+
+                }
+            }
+        }
+
+    }
+
+
+    .menu__desktop {
+        .menu__links a.hover__efect {
+            display: block;
+            @include hover__efect($black);
+        }
+    }
+
+    // .menu__mobile .menu__logo img {
+    //     transition: all .5s ease;
+    // }
+
+    &.ativo__scroll {
+        .menu__desktop {
+            padding: 10px 0 !important;
+        }
+
+        .menu__mobile {
+            padding: 0 !important;
+        }
+    }
+
+}
+
+
+@mixin titulo-center {
+    text-align: center;
+    font-family: $font-serif;
+    //  font-size: clamp(32px, 4.5vw, 70px);
+    @include clamp("font-size", 42px, 4.5vw, 70px);
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    color: $preto;
+}
+
+@mixin tituloGrande {
+    color: $secundaria;
+    font-size: clamp(42px, 7vw, 84px);
+    text-align: center;
+    margin: 40px auto;
+}
+
+@mixin subtitulo($alinhamento:center) {
+    color: $terciaria;
+    text-align: $alinhamento;
+    line-height: 160%;
+
+    @include d(s) {
+        font-size: 14px;
+    }
+}
+
+@mixin botao($bg:white, $color:$secundaria) {
+    border-radius: 30px;
+    padding: 15px 40px;
+    text-align: center;
+    display: inline-flex;
+    background-color: $bg;
+    color: $color;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+
+    span {
+        background: $secundaria;
+        position: absolute;
+        transform-origin: center center;
+        @include size(100px);
+        border-radius: 50%;
+        animation: animate 1s linear forwards;
+        pointer-events: none;
+
+        z-index: 10;
+
+    }
+}
+
+
+@mixin sombra {
+    box-shadow: 0 30px 30px -40px rgb(0 0 0 / 64%);
+}
+
+
+
+
+// ===================================================
+@mixin text-shadow {
+    text-shadow: 0px 2px 5px rgb(0 0 0 / 50%)
+}
+
+@mixin center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+//background
+@mixin bg-props-contain {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@mixin bg-props-cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+// Sizing
+// ------
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// Normal & hover state
+// --------------------
+@mixin hoverer($property, $normal, $hovered) {
+
+    transition: 0.4s ease;
+
+    #{$property}: $normal;
+
+    &:hover {
+        #{$property}: $hovered;
+    }
+}
+
+
+@mixin data__logo {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 5px 10px;
+
+    img {
+        width: 130px;
+    }
+}
+
+@mixin pseudo($p:initial) {
+    content: "";
+    display: block;
+    @include bg-props-contain;
+    position: $p;
+    pointer-events: none;
+
+}
+
+@mixin inset {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}

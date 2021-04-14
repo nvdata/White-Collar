@@ -1,0 +1,81 @@
+body {
+    --cor-base: #3C5C74;
+    --cor-base-mode: #3C5C74;
+    --cor-suporte: #DAE3EA;
+    --preto: #141414;
+    --preto-mode: #141414;
+    --cinza-base: #737B7D;
+    --branco-claro: #F3F5F6;
+    --white: #fff;
+    --white-mode: #fff;
+    --font-claro: #595959;
+    --body-fundo: #fafafa;
+    --cinza-claro: rgb(228, 228, 228);
+    --pseudo-color: #dae3ea;
+    --azul-bebe: #F2F5FA;
+    --preto-claro: #373F41;
+    --speaker: #3C64B1;
+    --moderator: rgba(60, 92, 112, 0.49);
+}
+
+body.dark__mode {
+    --cor-base: #3C5C74;
+    --cor-base-mode: #6A8BA3;
+    --preto-mode: #141414;
+
+    --cor-suporte: #323232;
+    --preto: #F3F5F6;
+    --cinza-base: #737B7D;
+    --branco-claro: #ffffff;
+    --white: white;
+    --white-mode: rgb(60, 60, 60);
+    --font-claro: #c5c5c5;
+    --body-fundo: rgb(32, 32, 32);
+    --cinza-claro: rgb(228, 228, 228);
+    --pseudo-color:#4c4c4c;
+    --azul-bebe: rgb(60, 60, 60);
+    --preto-claro: #d1d1d1;
+    --speaker: #3C64B1;
+    --moderator: rgba(60, 92, 112, 0.49);
+}
+
+// COLORS
+$cor-base:#{var(--cor-base)};
+$cor-base-mode:#{var(--cor-base-mode)};
+$cor-suporte:#{var(--cor-suporte)};
+$preto:#{var(--preto)};
+$preto-mode:#{var(--preto-mode)};
+$cinza-base:#{var(--cinza-base)};
+$branco-claro:#{var(--cor-suporte)};
+$white:#{var(--white)};
+$font-claro:#{var(--font-claro)};
+$body-fundo:#{var(--body-fundo)};
+$cinza-claro:#{var(--cinza-claro)};
+$pseudo-color:#{var(--pseudo-color)};
+$azul-bebe:#{var(--azul-bebe)};
+$preto-claro:#{var(--preto-claro)};
+$speaker:#{var(--speaker)};
+$moderator:#{var(--moderator)};
+$white-mode:#{var(--white-mode)};
+
+
+
+
+//FONTES
+$font-serif:"Rattles",
+Georgia;
+$font-mulish:'Mulish',
+sans-serif;
+$font-montserrat:'Montserrat',
+sans-serif;
+
+@font-face {
+    font-family: 'Rattles';
+    src: url('../fonts/Rattles-Serif.woff') format('woff'), //modern browsers
+        url('../fonts/Rattles-Serif.ttf') format('truetype'); //safari ios
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+    letter-spacing: .3px;
+
+}
