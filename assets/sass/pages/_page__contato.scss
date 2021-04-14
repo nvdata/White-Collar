@@ -28,7 +28,7 @@ main {
 
     .menu__btn {
         margin: 0 20px;
-        @include hover__efect($preto);
+        @include hover__efect(var(--preto-mode));
 
         &:hover {
             background: transparent;
