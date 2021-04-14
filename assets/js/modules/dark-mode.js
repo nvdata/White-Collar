@@ -35,7 +35,7 @@ export
 
 function escondeIcon() {
 
-    let posicaoScroll = window.onscroll = function (e) {
+    window.onscroll = function (e) {
         let posicao = this.oldScroll > this.scrollY
         console.log(posicao);
         this.oldScroll = this.scrollY;
