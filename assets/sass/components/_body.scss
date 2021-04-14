@@ -25,10 +25,18 @@ body {
         right: 20px;
         cursor: pointer;
         z-index: 10000;
-        color: $cor-base-mode;
+        color: $preto;
+
+        transition: .3s ease;
 
         ion-icon {
             font-size: 24px;
+
+        }
+    }
+    &.dark__mode{
+        button.dark__mode{
+            color: white;
         }
     }
 }

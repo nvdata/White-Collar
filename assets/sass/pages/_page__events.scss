@@ -167,7 +167,7 @@
         }
 
         &:hover {
-            border: 1px solid $font-claro;
+            border: 1px solid $cor-base-mode;
 
         }
 
@@ -186,7 +186,7 @@
             font-family: $font-montserrat;
             display: inline-block;
             padding-bottom: 15px;
-            font-weight: 600;
+            font-weight: 500;
             border-bottom: 1.5px solid $cor-base;
             line-height: 145%;
             color: $preto;
@@ -203,6 +203,7 @@
             margin: 0;
             padding: 0;
             margin-bottom: 20px;
+            color: $preto;
 
         }
 
@@ -221,7 +222,7 @@
 
             * {
                 display: inline-block;
-                color: $cor-base !important;
+                color: $cor-base-mode !important;
                 font-size: 14px;
                 font-weight: 600;
 
@@ -242,6 +243,7 @@
 
             strong {
                 color: $preto;
+                font-weight: 600;
 
             }
 
